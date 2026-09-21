@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our work — Northchart</title>
+<meta name="description" content="How Northchart replaced a pediatric cardiology clinic's referral spreadsheet in six weeks with the first part of Northchart PRM, and what we are building next.">
+<link rel="canonical" href="https://northcharttx.com/work.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Northchart">
+<meta property="og:title" content="Six weeks to replace the spreadsheet a whole clinic was running on">
+<meta property="og:description" content="How Northchart replaced a pediatric cardiology clinic's referral spreadsheet with the first part of Northchart PRM, and what we are building next.">
+<meta property="og:url" content="https://northcharttx.com/work.html">
+<meta property="og:image" content="https://northcharttx.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14283F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/form.css">
+<script src="/assets/site.js" defer></script>
+<script src="/assets/motion.js" defer></script>
+<style>
+  /* ---- Case study only ---- */
+  .hero{padding:80px 0 0}
+  .hero h1{max-width:22ch}
+  .hero .lede{max-width:64ch}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;background:var(--paper);border:1px solid var(--line);border-bottom:none;border-radius:var(--radius) var(--radius) 0 0;box-shadow:0 -10px 30px rgba(20,40,63,.05)}
+  .facts div{padding:1.3rem 1.4rem;border-right:1px solid var(--line)}
+  .facts div:last-child{border-right:none}
+  .facts div span{display:block;font-size:.74rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:.35rem}
+  .facts div b{font-weight:500;font-family:var(--display);font-size:1.12rem;line-height:1.3;display:block;color:var(--ink)}
+
+  .article{padding:72px 0 64px}
+  .article h2{font-size:1.9rem;margin:2.6rem 0 1rem}
+  .article h2:first-child{margin-top:0}
+  .article h3{margin:2rem 0 .7rem}
+  .article p{margin-bottom:1.15rem;max-width:none}
+  .article ul{list-style:none;margin:0 0 1.5rem}
+  .article li{padding:.6rem 0 .6rem 1.7rem;position:relative;color:var(--slate);border-bottom:1px solid var(--line)}
+  .article li:last-child{border:none}
+  .article li::before{content:"";position:absolute;left:0;top:1.15rem;width:14px;height:2px;background:var(--teal)}
+  .callout{background:var(--mist);border-left:3px solid var(--signal);padding:1.5rem 1.7rem;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:2rem 0}
+  .callout p{margin:0;color:var(--ink);font-family:var(--display);font-size:1.15rem;line-height:1.5}
+
+  /* before / after strip */
+  .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;margin:2.4rem 0 .6rem}
+  .ba .box{border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.3rem;background:var(--paper);font-size:.9rem}
+  .ba .box .t{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem}
+  .ba .before .t{color:var(--signal)}.ba .after .t{color:var(--teal)}
+  .ba .t i{width:8px;height:8px;border-radius:50%;background:currentColor}
+  .ba .cell{display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;border-bottom:1px dashed var(--line);color:var(--slate)}
+  .ba .cell:last-child{border:none}
+  .ba .cell>:last-child{text-align:right}
+  .ba .cell code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;color:var(--ink);background:var(--mist);padding:.1rem .4rem;border-radius:4px}
+  .ba .cell .ok{color:var(--teal);font-weight:600}
+  .ba .arrowbig{font-family:var(--display);font-size:2rem;color:var(--teal);text-align:center;line-height:1}
+  .ba + .cap{font-size:.82rem;color:var(--slate);margin-bottom:2rem}
+
+  .results .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.4rem}
+  .rcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--radius);padding:1.8rem 1.5rem;position:relative;overflow:hidden;transition:background .3s,border-color .3s,transform .3s var(--ease)}
+  .rcard:hover{background:rgba(255,255,255,.08);border-color:rgba(127,197,188,.4);transform:translateY(-3px)}
+  .rcard::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,var(--teal-soft),transparent)}
+  .rcard b{display:block;font-family:var(--display);font-size:2.6rem;color:#fff;line-height:1;margin-bottom:.6rem;font-variant-numeric:tabular-nums}
+  .rcard p{color:var(--muted-on-navy);font-size:.94rem;margin:0;max-width:none}
+  .results .disclaimer{color:var(--dim-on-navy);font-size:.86rem;margin-top:2rem;max-width:66ch;padding-left:1rem;border-left:2px solid rgba(143,160,180,.35)}
+
+  .next .tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);border:1px solid var(--signal);border-radius:999px;padding:.3rem .8rem .3rem .65rem;margin-bottom:1.2rem;background:var(--paper)}
+  .next .tag i{width:7px;height:7px;border-radius:50%;background:var(--signal);animation:blink 1.6s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  .next h2{margin-top:0}
+  .next .wrap{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:start}
+  .next .body p{margin-bottom:1.15rem;max-width:none}
+  .next .body ul{list-style:none;margin:0 0 1.5rem}
+  .next .body li{padding:.6rem 0 .6rem 1.7rem;position:relative;color:var(--slate);border-bottom:1px solid var(--line)}
+  .next .body li:last-child{border:none}
+  .next .body li::before{content:"";position:absolute;left:0;top:1.15rem;width:14px;height:2px;background:var(--teal)}
+  .dir{position:sticky;top:96px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.3rem;box-shadow:var(--shadow);font-size:.86rem}
+  .dir .dh{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);padding-bottom:.6rem;border-bottom:1px solid var(--line);margin-bottom:.5rem;display:flex;justify-content:space-between}
+  .dir .drow{padding:.6rem 0;border-bottom:1px dashed var(--line)}
+  .dir .drow:last-of-type{border:none}
+  .dir .drow b{display:block;color:var(--ink);font-weight:600;font-size:.9rem}
+  .dir .drow span{color:var(--slate);font-size:.8rem}
+  .dir .drow .src{display:inline-block;margin-top:.3rem;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .45rem;border-radius:999px;background:var(--mist);color:var(--slate)}
+  .dir .drow .src.v{background:rgba(46,125,116,.12);color:var(--teal)}
+  .dir .dfoot{margin-top:.6rem;font-size:.76rem;color:var(--slate)}
+
+  .means{background:var(--paper)}
+  .means .narrow h2{margin-bottom:1rem}
+  .means p{margin-bottom:1.15rem;max-width:none}
+
+  @media(max-width:820px){
+    .facts{grid-template-columns:1fr 1fr}
+    .facts div:nth-child(2){border-right:none}
+    .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .ba{grid-template-columns:1fr}
+    .ba .arrowbig{transform:rotate(90deg)}
+    .results .rgrid{grid-template-columns:1fr}
+    .next .wrap{grid-template-columns:1fr;gap:32px}
+    .dir{position:static}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg width="38" height="38" viewBox="0 0 120 120" aria-label="Northchart"><rect width="120" height="120" rx="30" fill="#14283F"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg>
+      <span>Northchart</span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu"><i></i><i></i><i></i></button>
+    <nav class="navlinks" id="navlinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/work.html" aria-current="page">Our work</a>
+      <a href="/technology-partner.html">Technology partner</a>
+      <a href="/blog/">Blog</a>
+      <a class="cta" href="#contact" data-ga="nav_cta_click">Book a free audit</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">Case study · Pediatric cardiology</div>
+    <h1>Six weeks to replace the spreadsheet a whole clinic was running on.</h1>
+    <p class="lede">A pediatric cardiology clinic managed every incoming referral in one shared Sheet. Seven people worked in it, anyone could overwrite anyone, and the call history was written in abbreviations only one person could read. We replaced how staff work with that data.</p>
+    <div class="facts" data-reveal-stagger>
+      <div><span>Practice</span><b>A pediatric cardiology clinic</b></div>
+      <div><span>Size</span><b>2 providers, 5 staff</b></div>
+      <div><span>Built</span><b>Northchart PRM, part one</b></div>
+      <div><span>Timeline</span><b>6 weeks, first call to live</b></div>
+    </div>
+  </div>
+</div>
+
+<section class="article">
+  <div class="narrow">
+    <div data-reveal>
+    <h2>The situation</h2>
+    <p>Referrals arrived the way they arrive at most specialty practices — by fax, by phone, and by email. Each one was typed into a shared spreadsheet, and from that point on the spreadsheet was the clinic: intake, insurance authorization, call attempts, scheduling status, billing notes. Everyone opened the same tab.</p>
+    <p>It worked, in the way that spreadsheets work right up until they don't. There was no way to stop a half-finished record being saved. A call attempt was recorded as a string like <em>4/8/26 JC LVM</em>, which a person can read and a computer cannot count — so the clinic's own rule about attempting five calls before closing a referral could be followed but never verified. And the same referring office was entered four different ways across four months, which meant nobody could total anything by who sent it.</p>
+    <p>The clinic did not need a bigger spreadsheet. It needed the spreadsheet to stop being the interface.</p>
+    </div>
+
+    <div data-reveal>
+    <h3>What nobody could answer</h3>
+    <ul>
+      <li>Which referrals had gone a week or more without a call attempt</li>
+      <li>Whether the five-call rule had actually been followed on any given referral</li>
+      <li>Who changed a patient's status, when, and what it had been before</li>
+      <li>How many referrals came from a given referring office, when its name was typed differently every time</li>
+    </ul>
+
+    <div class="callout">
+      <p>Everyone who needed to read one row could also edit — or delete — every other row, including the ones holding patient information. That is not a staff discipline problem. It is a permissions problem, and no amount of care fixes it.</p>
+    </div>
+    </div>
+
+    <div data-reveal>
+    <h2>What we built</h2>
+    <p>The first part of Northchart PRM — our provider relationship management system: a web portal that every member of staff logs into, and that nobody has to leave. The spreadsheet is still the data store, but it is shared with the physician and one machine account only. Staff never touch it directly again.</p>
+    <p>Four roles — billing, clinic staff, doctor, administrator — each see the referrals and fields their job requires, and no more. A referral cannot be saved half-entered, because the form validates before it writes. Call attempts are recorded as structured entries with a date, a person, and an outcome, which is what makes the five-call rule countable rather than aspirational. Every change writes to an append-only audit trail: who, what, when, and the previous value.</p>
+
+    <div class="ba" aria-label="Before and after: how a call attempt is recorded">
+      <div class="box before">
+        <div class="t"><i></i>Before · the shared sheet</div>
+        <div class="cell"><span>Call attempt</span><code>4/8/26 JC LVM</code></div>
+        <div class="cell"><span>Referring office</span><code>4 spellings</code></div>
+        <div class="cell"><span>Who can edit</span><span>Everyone</span></div>
+        <div class="cell"><span>Five-call rule</span><span>Unverifiable</span></div>
+      </div>
+      <div class="arrowbig" aria-hidden="true">→</div>
+      <div class="box after">
+        <div class="t"><i></i>After · the portal</div>
+        <div class="cell"><span>Call attempt</span><span class="ok">Date · person · outcome</span></div>
+        <div class="cell"><span>Referring office</span><span class="ok">One record</span></div>
+        <div class="cell"><span>Who can edit</span><span class="ok">By role, audited</span></div>
+        <div class="cell"><span>Five-call rule</span><span class="ok">Counted</span></div>
+      </div>
+    </div>
+    <p class="cap">Illustrative. No practice data shown.</p>
+
+    <p>Patient names never appear in a web address or in a browser log; records are addressed by an internal identifier. The clinic's data stays in the clinic's own Google account — Northchart keeps no copy of it. The compliance posture for each deployment, including business associate agreements, is agreed with the practice in writing before any build begins.</p>
+    </div>
+
+    <div data-reveal>
+    <h3>How it fits the practice's day</h3>
+    <ul>
+      <li>Front desk enters a referral once, into a form that will not accept a partial record</li>
+      <li>Every call attempt is logged as a call, not as a note — so the follow-up queue builds itself</li>
+      <li>Billing sees authorization status without interrupting clinical staff to ask</li>
+      <li>The physician sees what is ready to schedule, without reading the whole sheet</li>
+      <li>The spreadsheet is still there. Nobody opens it.</li>
+    </ul>
+    <!-- Add a redacted screenshot of the referral list or the call-log panel here when one is cleared by the clinic. No patient data visible. -->
+    </div>
+  </div>
+</section>
+
+<section class="results dark">
+  <svg class="watermark" viewBox="0 0 120 120" aria-hidden="true"><path d="M26 88 L46 88 L59 52 L72 72 L86 38"/><path class="notch" d="M86 38 L77 49.5 L95 48.5 Z"/></svg>
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2>Where it stands</h2>
+      <p>The portal went live and has been the clinic's referral workflow ever since.</p>
+    </div>
+    <div class="rgrid" data-reveal-stagger>
+      <div class="rcard"><b><span data-count="6">6</span> weeks</b><p>from the first conversation to the whole clinic working inside the portal</p></div>
+      <div class="rcard"><b><span data-count="2">2</span> months</b><p>in daily use — every referral since go-live has been entered through it, with no fallback to the old sheet</p></div>
+      <div class="rcard"><b><span data-count="4">4</span> roles</b><p>billing, clinic staff, doctor, administrator — each with its own permissions and its own view</p></div>
+    </div>
+    <p class="disclaimer" data-reveal>These are delivery facts, not outcome claims. We have not yet measured staff hours saved or revenue recovered at this practice, and we would rather publish nothing than publish a number we could not defend to a practice administrator. When there are figures the clinic will stand behind, they will appear here.</p>
+  </div>
+</section>
+
+<section class="next mist">
+  <div class="wrap">
+    <div class="body" data-reveal>
+      <div class="tag"><i></i>In build now</div>
+      <h2>What we are building underneath it</h2>
+      <p>The portal answers <em>what happened to this referral</em>. It cannot answer <em>which referring offices are sending us fewer patients than last year</em> — and neither can the EHR. That question needs something the clinic has never had: one clean, current record of the providers and practices who refer to it.</p>
+      <p>So that is the second part of Northchart PRM, and what we are building next with the same practice: a referring provider and practice directory that becomes the single source of truth for that data across every system the clinic uses.</p>
+      <ul>
+        <li>Provider and practice records seeded from the national NPI registry, scoped to the area the practice actually receives referrals from</li>
+        <li>Every field records where it came from, who last verified it, and when — and a scheduled refresh can never overwrite something a human has confirmed</li>
+        <li>The portal reads from the directory and writes nothing to it, so one referral is attributed to one provider rather than to four spellings of a name</li>
+        <li>When staff spot a stale address, phone, or fax, they flag it; an administrator reviews and approves. Two systems never write the same field</li>
+        <li>A provider's affiliation to a practice is dated, so a provider moving between groups does not rewrite last year's referral history</li>
+      </ul>
+      <p>Two deliberate constraints shape it. The directory holds no patient data of any kind — only business information about referring offices, which keeps it outside the reach of the questions that make practices nervous. And it is deployed inside the practice's own hosting account, under the practice's own domain. The practice owns the data and the infrastructure; we build and maintain it.</p>
+      <p>This page will be updated as that work ships.</p>
+    </div>
+    <aside class="dir" data-reveal aria-label="Illustration of a referring provider directory record">
+      <div class="dh"><span>Referring provider</span><span>Directory</span></div>
+      <div class="drow"><b>Practice name</b><span>One record, one spelling</span><br><span class="src v">Verified by staff</span></div>
+      <div class="drow"><b>NPI</b><span>Seeded from the national registry</span><br><span class="src">NPI registry</span></div>
+      <div class="drow"><b>Fax · phone · address</b><span>Flagged by staff, approved by admin</span><br><span class="src v">Verified by staff</span></div>
+      <div class="drow"><b>Affiliation</b><span>Dated, so history stays put</span><br><span class="src">Scheduled refresh</span></div>
+      <div class="dfoot">Illustration. Every field records its source and who last confirmed it.</div>
+    </aside>
+  </div>
+</section>
+
+<section class="means">
+  <div class="narrow" data-reveal>
+    <h2>What this means for your practice</h2>
+    <p>Every specialty practice we talk to has some version of this. The details differ — an orthopedic group's intake does not look like a pediatric cardiology clinic's — but the shape repeats: the EHR tracks patients, a spreadsheet tracks everything the EHR does not, and nobody tracks the referring relationships at all. The loss shows up later as an unexplained slow quarter that nobody can trace back to a source.</p>
+    <p>A referral audit is how we find out whether that is happening in your practice. It takes an hour, costs nothing, and you keep the findings either way — including if the answer is that your referrals are healthy and you do not need us.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap grid">
+    <div class="intro" data-reveal>
+      <div class="label">Free referral audit</div>
+      <h2>See what an audit would find in your practice.</h2>
+      <p>One hour with your practice administrator. Written findings. No obligation.</p>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>You send the form</b>We reply within one business day to agree a time.</div></li>
+        <li><span class="n">2</span><div><b>One hour, on a call or on site</b>With whoever handles referrals day to day.</div></li>
+        <li><span class="n">3</span><div><b>Written findings within 48 hours</b>Yours to keep, whether or not we go further.</div></li>
+      </ol>
+      <p class="orbook">Rather pick a time yourself? <a href="#contact" data-book data-ga="book_click">See available times →</a></p>
+      <div class="alt" data-phone hidden></div>
+    </div>
+
+    <form class="cform" name="audit-request" method="POST" action="/thanks.html"
+          data-netlify="true" netlify-honeypot="company-website" data-lead-form data-reveal>
+      <input type="hidden" name="form-name" value="audit-request">
+      <input type="hidden" name="source-page" value="Our work">
+      <p class="hp"><label>Leave this field empty <input name="company-website" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="fhead">
+        <strong>Request a free referral audit</strong>
+        <span class="time">Takes a minute</span>
+      </div>
+
+      <div class="fields">
+        <div class="row">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="row">
+          <label for="f-practice">Practice name</label>
+          <input id="f-practice" name="practice" type="text" required autocomplete="organization">
+        </div>
+        <div class="row">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="row">
+          <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="row full">
+          <label for="f-msg">What's prompting this? <span class="opt">(optional)</span></label>
+          <textarea id="f-msg" name="message"></textarea>
+        </div>
+      </div>
+
+      <button type="submit">Request a free referral audit <span class="arrow" aria-hidden="true">→</span></button>
+      <p class="privacy-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Please don't include any patient information in this form. We use what you send only to arrange the audit — see our <a href="/privacy.html">privacy policy</a>.</span></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl"><svg width="20" height="20" viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="30" fill="#2A3D55"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg><span>Northchart · Houston, Texas</span></div>
+    <div><a href="/privacy.html">Privacy</a> · © 2026 Northchart</div>
+  </div>
+</footer>
+
+</body>
+</html>

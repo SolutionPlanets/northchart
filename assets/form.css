@@ -1,0 +1,86 @@
+/* Northchart — contact form, shared by every page.
+   A white "paper" card sitting on the navy contact section.
+   Field labels in Public Sans; one signal-red button per screen. */
+
+.cform{
+  background:#FFFFFF;
+  color:#14283F;
+  border-radius:14px;
+  padding:2rem 1.9rem 1.7rem;
+  box-shadow:0 30px 70px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08);
+  position:relative;
+  text-align:left;
+}
+.cform::before{
+  content:"";position:absolute;left:1.9rem;right:1.9rem;top:0;height:3px;
+  background:linear-gradient(90deg,#2E7D74,#7FC5BC);border-radius:0 0 3px 3px;
+}
+.cform .fhead{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.4rem;padding-bottom:1.1rem;border-bottom:1px solid #D8E0E6}
+.cform .fhead strong{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:1.25rem;line-height:1.25;color:#14283F}
+.cform .fhead .time{flex:none;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2E7D74;background:#EEF2F5;border-radius:999px;padding:.35rem .7rem;white-space:nowrap}
+
+.cform .fields{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.1rem}
+.cform .row{display:flex;flex-direction:column;gap:.4rem}
+.cform .row.full{grid-column:1 / -1}
+
+.cform label{
+  font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:#3B4E66;
+}
+.cform .opt{font-weight:500;color:#8FA0B4;text-transform:none;letter-spacing:0}
+
+.cform input[type="text"],
+.cform input[type="email"],
+.cform input[type="tel"],
+.cform textarea{
+  width:100%;min-height:50px;
+  font-family:inherit;font-size:1rem;line-height:1.5;
+  color:#14283F;background:#F6F8FA;
+  border:1.5px solid #D8E0E6;border-radius:8px;
+  padding:.75rem .9rem;
+  transition:border-color .2s,background .2s,box-shadow .2s;
+}
+.cform textarea{min-height:118px;resize:vertical}
+.cform input:hover,.cform textarea:hover{border-color:#B9C6D4}
+.cform input:focus,.cform textarea:focus{
+  outline:none;background:#FFFFFF;border-color:#2E7D74;
+  box-shadow:0 0 0 4px rgba(46,125,116,.18);
+}
+.cform input:user-invalid,.cform textarea:user-invalid{border-color:#C6403B;background:#FFF7F6}
+
+.cform button{
+  width:100%;margin-top:1.4rem;min-height:54px;
+  font-family:inherit;font-weight:600;font-size:1.02rem;
+  color:#FFFFFF;background:#C6403B;
+  border:none;border-radius:8px;padding:.95rem 1.5rem;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  box-shadow:0 8px 22px rgba(198,64,59,.32);
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.cform button .arrow{transition:transform .2s}
+.cform button:hover{background:#A93430;transform:translateY(-1px);box-shadow:0 12px 26px rgba(198,64,59,.36)}
+.cform button:hover .arrow{transform:translateX(4px)}
+.cform button:active{transform:translateY(0)}
+.cform button:focus-visible{outline:3px solid #2E7D74;outline-offset:3px}
+
+.cform .privacy-note{
+  font-size:.83rem;color:#3B4E66;margin:1rem 0 0;max-width:none;line-height:1.5;
+  display:flex;gap:.55rem;align-items:flex-start;
+}
+.cform .privacy-note svg{flex:none;width:16px;height:16px;margin-top:.2rem;stroke:#2E7D74;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cform .privacy-note a{color:#2E7D74;font-weight:600}
+
+/* Honeypot — hidden from people, visible to bots. */
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* "Or book a time directly" line, when it sits outside the card. */
+.orbook{margin-top:1.6rem;font-size:.95rem;color:#B9C6D4}
+.orbook a{color:#7FC5BC;text-decoration:none;font-weight:600}
+.orbook a:hover{text-decoration:underline}
+
+@media (max-width:560px){
+  .cform{padding:1.5rem 1.2rem 1.3rem;border-radius:12px}
+  .cform::before{left:1.2rem;right:1.2rem}
+  .cform .fields{grid-template-columns:1fr}
+  .cform .fhead{flex-direction:column;align-items:flex-start;gap:.6rem}
+}

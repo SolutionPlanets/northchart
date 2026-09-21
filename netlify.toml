@@ -1,0 +1,43 @@
+# Northchart — Netlify configuration
+# The site is plain HTML, so there is no build step.
+
+[build]
+  publish = "."
+  command = ""
+
+# Serve /work.html at /work, /privacy.html at /privacy, and so on.
+[[redirects]]
+  from = "/work"
+  to = "/work.html"
+  status = 301
+
+[[redirects]]
+  from = "/technology-partner"
+  to = "/technology-partner.html"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+
+# Sensible security headers for a brochure site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# Cache the static assets hard; they change rarely.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
