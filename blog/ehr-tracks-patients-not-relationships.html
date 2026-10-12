@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your EHR tracks patients. It was never built to track relationships. — Northchart</title>
+<meta name="description" content="Your EHR records who referred each patient. It was never designed to show you which referring offices are growing, flat, or quietly gone.">
+<link rel="canonical" href="https://northcharttx.com/blog/ehr-tracks-patients-not-relationships.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Northchart">
+<meta property="og:title" content="Your EHR tracks patients. It was never built to track relationships. — Northchart">
+<meta property="og:description" content="Your EHR records who referred each patient. It was never designed to show you which referring offices are growing, flat, or quietly gone.">
+<meta property="og:url" content="https://northcharttx.com/blog/ehr-tracks-patients-not-relationships.html">
+<meta property="og:image" content="https://northcharttx.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14283F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script src="/assets/site.js" defer></script>
+<script src="/assets/motion.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Your EHR tracks patients. It was never built to track relationships.", "description": "Your EHR records who referred each patient. It was never designed to show you which referring offices are growing, flat, or quietly gone.", "datePublished": "2026-10-12", "dateModified": "2026-10-12", "author": {"@type": "Person", "name": "Foram Doshi"}, "publisher": {"@type": "Organization", "name": "Northchart", "logo": {"@type": "ImageObject", "url": "https://northcharttx.com/favicon.svg"}}, "mainEntityOfPage": "https://northcharttx.com/blog/ehr-tracks-patients-not-relationships.html", "image": "https://northcharttx.com/og.png"}</script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg width="38" height="38" viewBox="0 0 120 120" aria-label="Northchart"><rect width="120" height="120" rx="30" fill="#14283F"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg>
+      <span>Northchart</span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu"><i></i><i></i><i></i></button>
+    <nav class="navlinks" id="navlinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/work.html">Our work</a>
+      <a href="/technology-partner.html">Technology partner</a>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a class="cta" href="/#contact" data-ga="nav_cta_click">Book a free audit</a>
+    </nav>
+  </div>
+</header>
+
+<div class="post-hero hero">
+  <div class="narrow">
+    <div class="crumbs"><a href="/blog/">← All articles</a></div>
+    <div class="kicker">Referrals</div>
+    <h1>Your EHR tracks patients. It was never built to track relationships.</h1>
+    <div class="byline"><span class="av"><svg width="22" height="22" viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="30" fill="#14283F"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg></span><div><b>Foram Doshi</b><time datetime="2026-10-12">October 12, 2026</time> · 4 min read</div></div>
+  </div>
+</div>
+
+<article class="article-body">
+  <div class="narrow">
+
+<p class="lead">It is Monday morning and the owner-physician asks a reasonable question: which offices referred to us last quarter, and which ones have gone quiet?</p>
+<p>The administrator says she will find out. She opens the EHR and pulls a list of new patients by date of service. Most of those records have a referring provider on them. Some have the name typed into a free-text box — two or three different spellings of the same practice, one with the hospital system&rsquo;s name instead of the office&rsquo;s, one with just a last name. A few are blank, because the fax arrived without one and nobody went back to fill it in. An hour and a half later there is a spreadsheet. It is roughly right, and nobody can say which part of it is wrong.</p>
+<p>Nothing failed here. The software did exactly what it was built to do.</p>
+
+<h2><span class="n">01</span>The question that has no field</h2>
+<p>Ask an EHR &ldquo;what happened with this patient?&rdquo; and it answers immediately. That is the question it was designed around — a complete longitudinal record for one person, defensible in an audit, billable to a payer.</p>
+<p>Ask it &ldquo;what is happening with this referring office?&rdquo; and there is nowhere for the question to land. The referring provider is an attribute attached to an encounter. It describes where one patient came from. It is not a record with a history of its own, a volume trend, a last-contact date, or an owner at your practice. So the pattern can only be reconstructed by exporting, cleaning, and counting — by hand, every time anyone asks.</p>
+
+<h2><span class="n">02</span>Why that is design, not a defect</h2>
+<p>This is not a complaint about any particular vendor, and switching EHRs will not fix it. The category was built for clinical documentation and revenue cycle. Referral relationships are a business development function, and they live between systems: the fax line, the front desk&rsquo;s memory, a coordinator&rsquo;s inbox, the phone call a provider&rsquo;s nurse made to someone she trained with.</p>
+
+<div class="pull"><p>A referral is an event your EHR records faithfully. A referring relationship is a pattern across hundreds of those events — and a pattern is not something a patient record system was ever asked to see.</p></div>
+<p>That gap is why a referring office can taper off for two or three quarters before anyone at your practice notices, and why the noticing usually happens by accident, in a hallway, when someone says &ldquo;we haven&rsquo;t seen anything from them in a while, have we?&rdquo;</p>
+
+<h2><span class="n">03</span>Where the pattern actually lives today</h2>
+<p>In a lot of independent practices, the honest answer is: in one person&rsquo;s head, plus a spreadsheet she maintains on her own initiative.</p>
+<p>That arrangement works, right up until it doesn&rsquo;t. The spreadsheet has no way to stop a half-finished row from saving. Call notes are written so a person can read them, which means a computer cannot count them. There is no record of who changed what. Everyone who can open it can also delete from it. And the same referring office is typed four different ways, so any count you run is quietly wrong.</p>
+<p>The one build of ours that is public is <a href="/work.html">a referral portal for an independent specialty practice here in Houston</a>, and the thing it changed was not the data they held. They already had all of it. What changed was that the referring office became a record you could open, with a name that was spelled one way, a history you could scroll, and a person whose job it was to look.</p>
+
+<h2><span class="n">04</span>What to do before replacing anything</h2>
+<p>You can get most of the visibility without a project. Four of these five steps are free.</p>
+
+<div class="checkbox">
+  <div class="t">Five steps, before replacing anything</div>
+  <ol>
+    <li><strong>Fix the names first.</strong> Pull every distinct referring provider value from the last twelve months, put them in a list, and merge the duplicates into one agreed spelling per office. Nothing else you do will count correctly until this is done.</li>
+    <li><strong>Count once, by office, by month.</strong> Twelve rows per office. You are not looking for precision; you are looking for shape — rising, flat, stopped.</li>
+    <li><strong>Mark the stops.</strong> Any office that appears in the first half of that twelve months and not in the last ninety days goes on a short list. Do not assume you know why.</li>
+    <li><strong>Give the list one owner.</strong> Not the front desk as a group, and not everyone. One named person who looks at it monthly.</li>
+    <li><strong>Do the arithmetic yourself.</strong> Multiply the number of offices on your stopped list by what you know a new patient from a referring office is worth to your practice. Use your own figure, not an industry one. That number is what the invisibility costs you per year.</li>
+  </ol>
+</div>
+
+<h2><span class="n">05</span>Then decide whether it is worth building</h2>
+<p>Sometimes the answer is no. If step two shows three referring offices and all three are steady, you do not need software — you need to keep taking those relationships seriously. The exercise above is worth doing precisely because it can tell you to do nothing.</p>
+<p>If it shows thirty offices, a handful that went quiet without anyone deciding to let them, and a spreadsheet nobody trusts, that is a different conversation.</p>
+<p>We run a <a href="/#contact" data-book data-ga="blog_body_cta_click">free one-hour referral audit</a> for independent practices in Houston. No charge and no obligation — you get written findings at the end of it, including the cases where our honest recommendation is that you do not need us. If you would rather just run the five steps above yourself first, that is a good outcome too. Either way, somebody should be able to answer the Monday question in under a minute.</p>
+
+
+    <div class="post-cta">
+      <div class="label">Free referral audit</div>
+      <h2>Want to know where your practice stands?</h2>
+      <p>One hour with your practice administrator. Written findings within 48 hours. No obligation.</p>
+      <div class="btnrow">
+        <a class="btn primary" href="/#contact" data-book data-ga="blog_book_click">Book a free referral audit <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="/technology-partner.html" data-ga="blog_tp_click">How we work with practices</a>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<section class="more-posts mist">
+  <div class="wrap">
+    <div class="label">Keep reading</div>
+    <div class="postlist">
+    <a class="postcard" href="/blog/what-a-referral-audit-looks-like.html" data-ga="blog_card_click">
+      <div class="pmeta"><span class="cat">Referrals</span><span class="dot"></span><time datetime="2026-10-05">October 5, 2026</time><span class="dot"></span><span>5 min read</span></div>
+      <h2>What a referral audit actually looks like, hour by hour</h2>
+      <p>A free hour tends to raise a reasonable question: what is the catch? This is the whole audit written down — the questions asked, what the written findings contain, and what happens if you decide not to work with us.</p>
+      <span class="readmore">Read the article <span class="arrow" aria-hidden="true">→</span></span>
+    </a>
+    <a class="postcard" href="/blog/signs-your-practice-is-losing-referrals.html" data-ga="blog_card_click">
+      <div class="pmeta"><span class="cat">Referrals</span><span class="dot"></span><time datetime="2026-09-21">September 21, 2026</time><span class="dot"></span><span>5 min read</span></div>
+      <h2>Five signs your practice is losing referrals without noticing</h2>
+      <p>Referral leakage rarely announces itself. Five signs to check in your own practice, and a 30-minute exercise to find out where you stand.</p>
+      <span class="readmore">Read the article <span class="arrow" aria-hidden="true">→</span></span>
+    </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl"><svg width="20" height="20" viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="30" fill="#2A3D55"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg><span>Northchart · Houston, Texas</span></div>
+    <div><a href="/privacy.html">Privacy</a> · © 2026 Northchart</div>
+  </div>
+</footer>
+
+</body>
+</html>
