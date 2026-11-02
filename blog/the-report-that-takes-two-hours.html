@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The report that takes two hours every month — Northchart</title>
+<meta name="description" content="How to tell which monthly reports should not be built by hand, what the manual version costs you, and what to check before automating anything.">
+<link rel="canonical" href="https://northcharttx.com/blog/the-report-that-takes-two-hours.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Northchart">
+<meta property="og:title" content="The report that takes two hours every month — Northchart">
+<meta property="og:description" content="How to tell which monthly reports should not be built by hand, what the manual version costs you, and what to check before automating anything.">
+<meta property="og:url" content="https://northcharttx.com/blog/the-report-that-takes-two-hours.html">
+<meta property="og:image" content="https://northcharttx.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14283F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/blog.css">
+<script src="/assets/site.js" defer></script>
+<script src="/assets/motion.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The report that takes two hours every month", "description": "How to tell which monthly reports should not be built by hand, what the manual version costs you, and what to check before automating anything.", "datePublished": "2026-11-02", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "Foram Doshi"}, "publisher": {"@type": "Organization", "name": "Northchart", "logo": {"@type": "ImageObject", "url": "https://northcharttx.com/favicon.svg"}}, "mainEntityOfPage": "https://northcharttx.com/blog/the-report-that-takes-two-hours.html", "image": "https://northcharttx.com/og.png"}</script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <svg width="38" height="38" viewBox="0 0 120 120" aria-label="Northchart"><rect width="120" height="120" rx="30" fill="#14283F"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg>
+      <span>Northchart</span>
+    </a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu"><i></i><i></i><i></i></button>
+    <nav class="navlinks" id="navlinks" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/work.html">Our work</a>
+      <a href="/technology-partner.html">Technology partner</a>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a class="cta" href="/#contact" data-ga="nav_cta_click">Book a free audit</a>
+    </nav>
+  </div>
+</header>
+
+<div class="post-hero hero">
+  <div class="narrow">
+    <div class="crumbs"><a href="/blog/">← All articles</a></div>
+    <div class="kicker">Data &amp; Reporting</div>
+    <h1>The report that takes two hours every month</h1>
+    <div class="byline"><span class="av"><svg width="22" height="22" viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="30" fill="#14283F"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg></span><div><b>Foram Doshi</b><time datetime="2026-11-02">November 2, 2026</time> · 4 min read</div></div>
+  </div>
+</div>
+
+<article class="article-body">
+  <div class="narrow">
+
+<p class="lead">It is the last Thursday of the month. Someone in your office has the EHR open in one window and a spreadsheet in the other. She exports the month&rsquo;s referrals, pastes them in, deletes the columns nobody reads, fixes the four spellings of the same referring office, counts how many are still open, highlights the ones that have gone past two weeks, and types the totals into the same three-row summary she has typed every month since March. Around eleven she sends it to you.</p>
+<p>It is accurate. It took her the better part of two hours. You read it in ninety seconds and the meeting moves on.</p>
+<p>Nothing there is anyone&rsquo;s fault. But it is worth naming what happened: a capable person spent two hours on a job with no judgment in it at all.</p>
+
+<h2><span class="n">01</span>The judgment is five minutes. The assembling is the rest.</h2>
+<p>Pull apart any monthly report and you find two different kinds of work.</p>
+<p><strong>Assembling</strong> is exporting, cleaning, matching names, counting, formatting. It has one right answer. Two careful people would produce the same number, and so would a computer.</p>
+<p><strong>Interpreting</strong> is noticing that two referring offices dropped off in the same fortnight, that the backlog sits in one provider&rsquo;s schedule and not the other&rsquo;s, and deciding whether anyone should pick up the phone about it. That is the part worth paying a person for, and it is almost always the shorter half.</p>
+<p>Most of the hours go to the half with no judgment in it. And when the month gets busy, it is the interpreting that gets dropped — the report still goes out, because the report is the visible part. The thinking quietly does not happen.</p>
+
+<h2><span class="n">02</span>Three tests for a report that should not be manual</h2>
+<p>Not every manual report is worth changing. Run these three, in order.</p>
+<p><strong>Does anyone act on it?</strong> If nothing has changed in six months because of this report, the fix is not to automate it. The fix is to stop producing it, and that one is free.</p>
+<p><strong>Would two people building it get the same number?</strong> If yes, it is assembling, and assembling can be moved off a person. If two capable people would disagree — because one counts a referral as closed when the patient is scheduled and the other when the report goes back out — then you do not have a reporting problem yet. You have a definition problem, and no software fixes that.</p>
+<p><strong>Is the input a field, or is it prose?</strong> A date, a dropdown, a provider identifier: countable. &ldquo;Called, left msg w/ daughter, will try Tues&rdquo; is readable by a person and invisible to a computer. Reports built on prose cannot be automated. They can only be retyped. That is usually the real reason the two hours exist.</p>
+
+<h2><span class="n">03</span>Work out what it costs on your own numbers</h2>
+<div class="pull"><p>A report that takes two hours to assemble is not a reporting problem. It is a record-keeping problem arriving a month late.</p></div>
+<p>Before you ask what a fix would cost, work out what the current arrangement costs. Two figures, both from your own practice.</p>
+<p>The first: the hourly cost of the person who builds it — wage plus the share you pay on top — times the hours, times twelve.</p>
+<p>The second is usually larger and never appears on a budget. What did she not do in those hours? If the person assembling the report is also the person who calls the patients nobody has reached, then the cost of the report is measured in unreached patients, not in wages.</p>
+<p>Write both down. If the total is small, keep the spreadsheet — genuinely. A two-hour report in a practice of five people is not an emergency, and people who sell software have an incentive not to say so.</p>
+
+<h2><span class="n">04</span>Four checks before you automate anything</h2>
+
+<div class="checkbox">
+  <div class="t">Four checks, before you automate</div>
+  <ol>
+    <li><strong>Write the definition down first.</strong> One sentence per number: what counts as an open referral, when the clock starts, when it stops. If you cannot write it in a sentence, no system can count it.</li>
+    <li><strong>Trace each number back to a field.</strong> Go line by line and find where each figure actually comes from. If it comes from someone reading free-text notes, the first project is structure, not reporting.</li>
+    <li><strong>Decide who reads it and when.</strong> A report with no standing slot on a calendar becomes a report nobody reads automatically instead of manually. Name the meeting before you name the metric.</li>
+    <li><strong>Run the manual version alongside for a month.</strong> Build it, keep producing the old one once more, and compare. Where the two disagree, your definition was fuzzier than you thought — and finding that out in week three is cheaper than finding it out in a physician meeting.</li>
+  </ol>
+</div>
+
+<h2><span class="n">05</span>The first build is usually structure, not the report</h2>
+<p>When a practice asks us for a dashboard, the dashboard is usually the second project. The first is making the record countable: one entry per referring office rather than four spellings, call attempts stored as dated entries rather than a sentence, a field for the thing you keep counting by hand.</p>
+<p>That is most of what the referral portal on our <a href="/work.html">work page</a> did in its first six weeks. It did not add reporting. It made the clinic&rsquo;s own calling rule countable, because the attempts were finally entries instead of prose. Once that is true, the monthly count stops being a task and becomes a question you can ask whenever you want the answer.</p>
+<p>Sometimes the conclusion is that nothing should be built. If the report drives no decisions, stop writing it. If the definitions are contested, settle them in a meeting rather than in a build. Both are free.</p>
+<p>If you want a second pair of eyes on which of your monthly reports are worth keeping, our <a href="/#contact" data-book data-ga="blog_body_cta_click">free one-hour referral audit</a> covers this — where the numbers come from, which are countable today, and which are assembled by hand. Written findings, no charge and no obligation, including the cases where the honest recommendation is to change nothing.</p>
+
+
+    <div class="post-cta">
+      <div class="label">Free referral audit</div>
+      <h2>Want to know where your practice stands?</h2>
+      <p>One hour with your practice administrator. Written findings within 48 hours. No obligation.</p>
+      <div class="btnrow">
+        <a class="btn primary" href="/#contact" data-book data-ga="blog_book_click">Book a free referral audit <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="/technology-partner.html" data-ga="blog_tp_click">How we work with practices</a>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<section class="more-posts mist">
+  <div class="wrap">
+    <div class="label">Keep reading</div>
+    <div class="postlist">
+    <a class="postcard" href="/blog/who-should-own-referral-follow-up.html" data-ga="blog_card_click">
+      <div class="pmeta"><span class="cat">Operations</span><span class="dot"></span><time datetime="2026-10-26">October 26, 2026</time><span class="dot"></span><span>4 min read</span></div>
+      <h2>Who should own referral follow-up in a small practice?</h2>
+      <p>Referral follow-up is rarely one job, and it is almost never the front desk&rsquo;s. A look at what the work actually contains, and five questions that settle who owns it.</p>
+      <span class="readmore">Read the article <span class="arrow" aria-hidden="true">→</span></span>
+    </a>
+    <a class="postcard" href="/blog/when-a-spreadsheet-stops-being-good-enough.html" data-ga="blog_card_click">
+      <div class="pmeta"><span class="cat">Operations</span><span class="dot"></span><time datetime="2026-10-19">October 19, 2026</time><span class="dot"></span><span>4 min read</span></div>
+      <h2>When a shared spreadsheet stops being good enough</h2>
+      <p>A shared spreadsheet rarely fails outright — it just stops being able to answer questions. Three questions that mark the line, and four checks you can run on your own sheet this week.</p>
+      <span class="readmore">Read the article <span class="arrow" aria-hidden="true">→</span></span>
+    </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fl"><svg width="20" height="20" viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="30" fill="#2A3D55"/><path d="M26 88 L46 88 L59 52 L72 72 L86 38" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 38 L77 49.5 L95 48.5 Z" fill="#C6403B"/></svg><span>Northchart · Houston, Texas</span></div>
+    <div><a href="/privacy.html">Privacy</a> · © 2026 Northchart</div>
+  </div>
+</footer>
+
+</body>
+</html>
