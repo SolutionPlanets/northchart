@@ -17,13 +17,23 @@
   status = 301
 
 [[redirects]]
-  from = "/technology-partner"
-  to = "/technology-partner.html"
+  from = "/privacy"
+  to = "/privacy.html"
   status = 301
 
 [[redirects]]
-  from = "/privacy"
-  to = "/privacy.html"
+  from = "/how-we-work"
+  to = "/how-we-work.html"
+  status = 301
+
+[[redirects]]
+  from = "/technology-partner"
+  to = "/how-we-work.html"
+  status = 301
+
+[[redirects]]
+  from = "/technology-partner.html"
+  to = "/how-we-work.html"
   status = 301
 
 # Sensible security headers for a brochure site.
