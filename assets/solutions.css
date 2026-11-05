@@ -1,0 +1,90 @@
+/* Northchart — home hero animation, solution cards, and the Solutions page.
+   Builds on site.css. Serif speaks, sans labels. Signal red is the accent. */
+
+.strip{background:var(--paper);border-bottom:1px solid var(--line)}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2.2rem;padding-top:1.1rem;padding-bottom:1.1rem;font-size:.88rem;font-weight:600;color:var(--slate)}
+.strip span::before{content:"✓ ";color:var(--teal)}
+
+/* ---------- Line icons (cards, Solutions page, hero scenes) ---------- */
+.ic{width:46px;height:46px;display:block;margin-bottom:.8rem}
+.ic *{fill:none;stroke:var(--ink);stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+.ic .a{stroke:var(--teal)}.ic .f{fill:var(--paper)}
+
+/* ---------- Hero animation: no box, just the icon and a typed title ---------- */
+.stage{padding:1rem 1rem .4rem}
+.stage .cap{font-family:var(--display);font-size:1.6rem;line-height:1.2;min-height:2.6rem;display:flex;justify-content:center;align-items:center;text-align:center;color:var(--signal)}
+.tw{position:relative;display:inline-block;white-space:nowrap}
+.ghost{visibility:hidden}
+.typed{position:absolute;left:0;top:0}
+.typed::after{content:"";display:inline-block;width:2px;height:1em;background:var(--signal);margin-left:3px;vertical-align:-.12em;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.stage svg{width:100%;max-width:290px;margin:.4rem auto 0;display:grid}
+.sc{opacity:0;transition:opacity .35s}.sc.on{opacity:1}
+.sc .d{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0}
+.sc .a{stroke:var(--teal)}.sc .f{fill:var(--mist)}
+.sc.on .d{animation:draw1 1.1s ease both}
+.sc.on .d:nth-child(2){animation-delay:.15s}.sc.on .d:nth-child(3){animation-delay:.3s}.sc.on .d:nth-child(4){animation-delay:.45s}.sc.on .d:nth-child(5){animation-delay:.6s}
+@keyframes draw1{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.dots{display:flex;justify-content:center;gap:.1rem;margin-top:.4rem}
+.dots button{width:28px;height:28px;border:0;background:none;cursor:pointer;position:relative}
+.dots button::before{content:"";position:absolute;left:10px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots button[aria-current="true"]::before{background:var(--teal)}
+
+/* ---------- Solution cards (home) ---------- */
+.solgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.4rem}
+.scard{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem 1.5rem;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+.scard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal)}
+.scard h3{margin-bottom:.5rem}
+.scard ul{list-style:none;margin:0 0 1rem}
+.scard li{font-size:.92rem;color:var(--slate);padding:.3rem 0 .3rem 1.2rem;position:relative}
+.scard li::before{content:"";position:absolute;left:0;top:.95rem;width:8px;height:2px;background:var(--teal)}
+.scard .more{margin-top:auto;font-weight:600;font-size:.93rem;color:var(--teal)}
+.stag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px;background:rgba(46,125,116,.14);color:var(--teal);margin-bottom:.7rem;white-space:nowrap}
+.dark .stag{background:rgba(127,197,188,.16);color:var(--teal-soft)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+.dark .card h3{margin-bottom:.4rem}
+.fineprint{font-size:.88rem;margin-top:1.6rem;padding-left:1rem;border-left:2px solid rgba(143,160,180,.4);color:var(--dim-on-navy);max-width:66ch}
+.fineprint a{color:var(--teal-soft)}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.4rem}
+.cards3 .card .step{color:var(--teal);opacity:.7}
+.cards3 .card p a{color:var(--teal);font-weight:600}
+.whygrid{max-width:760px}
+.baa{border-left:3px solid var(--signal);padding-left:1.1rem;margin-top:1.4rem;font-family:var(--display);font-size:1.2rem;color:var(--ink);max-width:40ch}
+
+/* ---------- Form select (matches form.css inputs) ---------- */
+.cform select{width:100%;min-height:50px;font-family:inherit;font-size:1rem;color:#14283F;background:#F6F8FA;border:1.5px solid #D8E0E6;border-radius:8px;padding:.75rem .9rem}
+.cform select:focus{outline:none;background:#fff;border-color:#2E7D74;box-shadow:0 0 0 4px rgba(46,125,116,.18)}
+
+/* ---------- Solutions page ---------- */
+.svchero{padding:64px 0 48px}
+.svchero .lede{max-width:62ch}
+.deco{position:absolute;right:24px;top:50%;transform:translateY(-50%);width:300px;height:auto}
+.deco .gl{stroke:var(--line);stroke-width:1}
+.deco .dl{fill:none;stroke:var(--ink);stroke-width:9;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;animation:dl 5s ease-in-out infinite}
+.deco .da{fill:var(--signal)}
+.deco .dp{fill:var(--paper);stroke:var(--teal);stroke-width:3}
+.deco .da,.deco .dp{opacity:0;animation:dp 5s ease-in-out infinite}
+@keyframes dl{0%{stroke-dashoffset:1;opacity:1}45%{stroke-dashoffset:0}90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes dp{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+.svc{display:grid;grid-template-columns:230px 1fr;gap:48px;align-items:start}
+.jump{position:sticky;top:96px;border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem;font-size:.92rem}
+.jump b{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.jump a{display:block;padding:.3rem 0;color:var(--slate);text-decoration:none}
+.jump a:hover{color:var(--teal)}
+.grp{margin-bottom:3rem;scroll-margin-top:96px}
+.grp h2{font-size:1.7rem;margin-bottom:.4rem;max-width:none}
+.grp h2 .ic{display:inline-block;width:36px;height:36px;margin:0 .7rem 0 0;vertical-align:-.5rem}
+.item{display:flex;justify-content:space-between;gap:1.5rem;padding:1rem 0;border-top:1px solid var(--line)}
+.item h3{font-family:var(--body);font-size:1.08rem;font-weight:600}
+.item p{font-size:.94rem}
+.item .stag{margin:0;height:fit-content}
+.btn.primary.light{background:#fff;color:var(--ink);box-shadow:none}
+
+@media(max-width:1100px){.deco{display:none}}
+@media(max-width:860px){.solgrid,.cards3,.two,.svc{grid-template-columns:1fr}.jump{position:static}}
+@media (prefers-reduced-motion:reduce){
+  .typed::after{animation:none!important}
+  .sc.on .d{animation:none!important}.sc{transition:none}
+  .deco .dl{animation:none!important;stroke-dashoffset:0}
+  .deco .da,.deco .dp{animation:none!important;opacity:1}
+}
